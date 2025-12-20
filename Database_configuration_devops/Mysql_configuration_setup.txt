@@ -1,0 +1,38 @@
+
+
+NOTE: Before going to setup account in mysql server, you need to install on server (Ec2 instance(Ubuntu,amazon linux,centos,etc)
+
+How to Create a User in MySQL and Set a Password
+
+	1.Login to MySQL
+		sudo mysql
+			or
+		mysql -u root -p
+		
+	2.Create a Database
+		CREATE DATABASE appdb;
+		
+	3.Create User with Password
+		CREATE USER 'appuser'@'localhost' IDENTIFIED BY 'StrongPassword@123';
+		
+		For remote access:
+		CREATE USER 'appuser'@'%' IDENTIFIED BY 'StrongPassword@123';
+	
+	4. Grant Permissions
+		GRANT ALL PRIVILEGES ON appdb.* TO 'appuser'@'%';
+		
+	5. Apply Privileges
+		FLUSH PRIVILEGES;
+		
+	6. Verify User
+		SELECT user, host FROM mysql.user;
+		
+	7. Test Login
+		mysql -u appuser -p
+		
+	8. Reset Password
+		ALTER USER 'appuser'@'%' IDENTIFIED BY 'NewPassword@123';
+		
+	9. Delete User
+		DROP USER 'appuser'@'%';
+		DevOps Tip: Use least privilege instead of ALL for production environments.
