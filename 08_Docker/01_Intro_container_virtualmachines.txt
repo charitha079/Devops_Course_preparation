@@ -1,0 +1,108 @@
+why virtualization and containers evolved ?
+	
+	
+	
+	Resource wastage
+		CPU used 10–15%, rest idle
+
+	High cost
+		More servers → more power, cooling, space
+
+	Slow provisioning
+		Weeks to buy & install servers
+
+	No isolation
+		One app crash → entire server down
+
+	Hard to scale
+		Scaling = buying new hardware
+
+	Environment mismatch
+		“Works on my machine” issue
+		
+		
+	Virtualization evolved  to checkmate those problems	
+	
+	
+1)	Virtualization ?
+	
+	Virtualization is the technology that allows you to run multiple isolated systems (VMs) on a single physical machine.
+	Core Component: Hypervisor
+					A Hypervisor is the software that creates and manages virtual machines.
+	
+		- One physical server → many Virtual Machines (VMs)
+		- Each VM has its own OS, CPU, RAM, Disk
+		- Multiple apps on one server 
+		- Better resource usage
+		- Cost reduction
+		- Faster provisioning
+	
+	
+	How DevOps Uses Virtualization
+
+		Spin up build servers dynamically
+		Create test environments quickly
+		Blue-Green & Canary deployments
+		Infrastructure as Code (IaC)
+		
+		
+		
+		problems with virtualization ?
+		
+		- Heavyweight		: Each VM has its own OS
+		- Slow boot time	: Minutes to start
+		- High resource usage
+		- Image sprawl	:Managing many VM images
+		- Not ideal for microservices
+		- Slower CI/CD pipelines
+		
+	Containers evolved to checkmate virtualization problems	
+		
+		
+2)	What are containers ?
+
+	In DevOps, a container is a lightweight, portable unit that packages:
+
+		- Application code
+		- Runtime (Java, Python, Node, etc.)
+		- Libraries & dependencies
+		- System tools & configs
+	
+	Containers allow applications to run in isolated environments with all required dependencies, ensuring consistency across development, testing, and production.
+	
+		Containers Problems 	: 
+			- Security isolation weaker than VMs
+			- Complex networking
+			- No built-in orchestration
+		kubernetes evolved to 	:
+			- Manage thousands of containers
+			- Auto-healing, scaling, load balancing
+	
+
+	
+		Containers vs virtualmachines
+		- Containers virtualize the application layer, while VMs virtualize the entire operating system.
+	
+		
+	
+3)	Devops workflow :
+	
+		1️ Physical Servers (Bare Metal)
+				↓
+		2️ Virtual Machines (VMware, KVM)
+				↓
+		3️ Cloud Computing (AWS EC2)
+				↓
+		4️ Containers (Docker)
+				↓
+		5️ Container Orchestration (Kubernetes)
+				↓
+		6️ DevOps / GitOps / Platform Engineering
+		
+		
+		
+4)	Short summary : 	
+		- Virtualization solved hardware underutilization and enabled cloud computing.
+		- Containers solved VM inefficiencies and enabled microservices.
+		- Kubernetes solved container management at scale.	
+		
