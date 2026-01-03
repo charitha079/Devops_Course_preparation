@@ -1,0 +1,61 @@
+
+		docker --version            # Check Docker version
+		docker info                 # Docker system info
+		docker help                 # List all commands
+		
+	Image Commands
+		docker images               # List images
+		docker pull nginx           # Download image
+		docker build -t myapp .     # Build image from Dockerfile
+		docker rmi image_id         # Delete image
+		docker tag img:v1 img:v2    # Tag image
+		
+	Container Commands
+		docker ps                   # Running containers
+		docker ps -a                # All containers
+		docker run nginx            # Run container
+		docker run -d nginx         # Run in background
+		docker run -it ubuntu bash  # Interactive container
+		docker stop container_id    # Stop container
+		docker start container_id   # Start container
+		docker restart container_id # Restart container
+		docker rm container_id      # Delete container
+		
+	Inspect & Debug
+		docker logs container_id       # View logs
+		docker exec -it container bash # Enter container
+		docker inspect container_id    # Detailed container info
+		docker stats                   # Live resource usage
+		
+	Networking Commands
+		docker network ls                 # List networks
+		docker network create mynet       # Create network
+		docker network inspect mynet      # Network details
+		docker network rm mynet           # Remove network
+		
+	Volume & Storage
+		docker volume ls                   # List volumes
+		docker volume create myvol         # Create volume
+		docker run -v myvol:/data nginx    # Attach volume
+		docker volume inspect myvol        # Volume details
+		docker volume rm myvol             # Remove volume
+		
+	Docker Compose 
+		docker-compose up                 # Start services
+		docker-compose up -d              # Detached mode
+		docker-compose down               # Stop services
+		docker-compose ps                 # Service status
+		docker-compose logs               # Logs
+		
+	Cleanup Commands (Avoid Disk Full Issues)
+		docker system df                  # Disk usage
+		docker system prune               # Remove unused data
+		docker container prune            # Remove stopped containers
+		docker image prune                # Remove unused images
+		docker volume prune               # Remove unused volumes
+		
+	Registry & Push (Nexus / DockerHub)
+		docker login
+		docker tag myapp user/myapp:v1
+		docker push user/myapp:v1
+		docker pull user/myapp:v1

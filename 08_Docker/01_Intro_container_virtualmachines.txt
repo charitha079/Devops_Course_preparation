@@ -1,7 +1,6 @@
 why virtualization and containers evolved ?
 	
 	
-	
 	Resource wastage
 		CPU used 10–15%, rest idle
 
