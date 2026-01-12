@@ -1,7 +1,7 @@
 Container Orchestration :
 
 	As companies began moving from monolithic applications to microservices, they started running hundreds or thousands of containers. Running all of them manually quickly became impossible.
-	at that point of time they faced below mentioned problems mostly when runnign containers in prouduction especially when demand Fluctuated.
+	at that point of time they faced below mentioned problems mostly when running containers in production especially when demand Fluctuated.
 
 
 	1)	Manual scaling:
