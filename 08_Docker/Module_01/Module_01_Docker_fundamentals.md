@@ -54,7 +54,7 @@ Docker also provides a **rich ecosystem** including **Docker Engine, Docker CLI,
 
 ## 3. Docker Architecture
     
-<img src="docker-architecture.png" width="700">
+   <img src="08_Docker/Module_01/03_Docker_architecture.png" width="700">
       
 Docker follows a **client-server architecture** with three main components.
 
