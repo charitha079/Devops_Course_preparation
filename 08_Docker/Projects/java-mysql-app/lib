@@ -1,2 +1,17 @@
-cd JAVA-MYSQL-APP/lib
-wget https://repo1.maven.org/maven2/mysql/mysql-connector-java/8.0.29/mysql-connector-java-8.0.29.jar
+Module 1: Docker Fundamentals
+Goal	: Understand what Docker is, why containers matter, and basic commands.
+
+	Topics:
+		- What is Docker? Containers vs Virtual Machines
+		- Docker architecture: Docker Engine, Docker Client, Docker Hub
+		- Images, Containers, Registries
+	
+		- Installing Docker (Linux / Windows / Mac)
+		
+		- Basic Docker CLI:
+			docker --version
+			docker run
+			docker ps, docker images
+			docker stop, docker rm 
+		- Container lifecycle
+		- Understanding ports and networking basics

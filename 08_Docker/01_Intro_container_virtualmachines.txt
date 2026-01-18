@@ -1,22 +1,22 @@
 why virtualization and containers evolved ?
 	
 	
-	Resource wastage
+	1) Resource wastage
 		CPU used 10–15%, rest idle
 
-	High cost
+	2) High cost
 		More servers → more power, cooling, space
 
-	Slow provisioning
+	3) Slow provisioning
 		Weeks to buy & install servers
 
-	No isolation
+	4) No isolation
 		One app crash → entire server down
 
-	Hard to scale
+	5) Hard to scale
 		Scaling = buying new hardware
 
-	Environment mismatch 
+	6) Environment mismatch 
 		“Works on my machine” issue
 		
 		

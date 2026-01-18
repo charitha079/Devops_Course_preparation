@@ -122,7 +122,7 @@ Goal	: Learn to deploy containers in cloud environments.
 	Topics:
 
 		- Docker on AWS EC2
-		- ntroduction to Docker Swarm
+		- Introduction to Docker Swarm
 		- Intro to Kubernetes concepts
 
 	Hands-on:
