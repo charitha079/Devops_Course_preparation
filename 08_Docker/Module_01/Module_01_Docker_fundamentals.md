@@ -102,14 +102,12 @@ docker rm          # Remove a stopped container
 
 ---
 
-## 6. Docker Container Lifecycle
+## 6. Container Lifecycle
 
 A Docker container goes through multiple stages from creation to deletion.
 
-![Docker Architecture](06_Contaier_lifecycle.png)
-
 <p align="center">
-  <img src="./06_Contaier_lifecycle.png" width="700" alt="Container lifecycle">
+  <img src="./06_Contaier_lifecycle.png" width="700" alt="Container Lifecycle">
 </p>
 
 ### Lifecycle Flow
