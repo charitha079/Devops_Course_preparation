@@ -109,9 +109,9 @@ A Docker container goes through multiple stages from creation to deletion.
 
 ### Lifecycle Flow
 
-```
-Image → Create → Start / Run → Running → Pause / Unpause → Stop / Kill → Exited → Remove
-```
+    ```
+    Image → Create → Start / Run → Running → Pause / Unpause → Stop / Kill → Exited → Remove
+    ```
 
 ### Lifecycle Stages
 
@@ -172,9 +172,7 @@ Deletes a stopped container and releases resources.
 docker rm <container>
 ```
 
----
-
-   A Docker container lifecycle starts with creation from an image, then it can be started or run, paused/unpaused, stopped, restarted, or killed, and finally        removed. Containers are **ephemeral**, so persistent data should be stored using **Docker volumes**.
+       A Docker container lifecycle starts with creation from an image, then it can be started or run, paused/unpaused, stopped, restarted, or killed, and finally        removed. Containers are **ephemeral**, so persistent data should be stored using **Docker volumes**.
 ---
 
 Happy Learning :)
