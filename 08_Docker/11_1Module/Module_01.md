@@ -1,7 +1,7 @@
 # Dockerfile Guide
 
 ## 1) What is a Dockerfile?
-	A **Dockerfile** is a text file that contains a set of instructions to automatically build a Docker image. It defines how an application and its environment are packaged, ensuring the app runs consistently across development, testing, and production.
+A **Dockerfile** is a text file that contains a set of instructions to automatically build a Docker image. It defines how an application and its environment are packaged, ensuring the app runs consistently across development, testing, and production.
 
   ### What a Dockerfile does:
    - Specifies the base image (OS / runtime)  
