@@ -68,9 +68,9 @@
 	
 ---	
 ## 4) Understanding Layers and Caching
-  ### Docker Image Layers
-  Docker images are a **stack of layers**, not a single file.
-		
+  ### 1) Docker Image Layers
+        
+		Docker images are a **stack of layers**, not a single file.
 		Example Dockerfile layers:
 		
 		| Instruction | Layer |
@@ -80,15 +80,15 @@
 		| `COPY package.json .` | Copy dependencies |
 		| `RUN npm install`     | Install dependencies |
 		| `COPY . .`            | Copy source code |
-		
-		- Layers are **immutable**, **cached**, and **shared** across images.
 	
-  ### Docker Build Cache
-  - Docker build cache is a **layer reuse mechanism**.
-  - During `docker build`:
-  - Docker checks each instruction
-  - If instruction and context haven’t changed, Docker **reuses the cached layer**
-  - Cache is invalidated if either the instruction OR the files used by that instruction change
+  - Layers are **immutable**, **cached**, and **shared** across images.
+	
+  ### 2) Docker Build Cache
+    - Docker build cache is a **layer reuse mechanism**.
+    - During `docker build`:
+    - Docker checks each instruction
+    - If instruction and context haven’t changed, Docker **reuses the cached layer**
+    - Cache is invalidated if either the instruction OR the files used by that instruction change
 	
 	**Example:**
 		**First build**
