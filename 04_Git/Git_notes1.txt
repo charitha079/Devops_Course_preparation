@@ -1,0 +1,374 @@
+
+Version control : Version control tracks changes in your project over time.
+
+Git ? 
+Git is a version control tool used to track and manage changes in code.
+
+			(or)
+			
+Git is a distributed version control system used to track changes in files(source code) over time. 
+It helps developers collaborate, maintain history, and manage different versions of a project.
+
+In simple way ,it track the changes like 
+"What changed, Who changed and When changed "
+
+Core concepts of git 
+Tracks changes			: Every edit you make can be saved as a “commit,” creating a timeline of your project.
+Distributed system		: Each developer has a full copy of the repository (including history) on their own machine.
+Branches				: You can create separate branches to experiment or develop features without affecting the main code.
+Merging					: Changes from different branches or contributors can be combined.
+Collaboration-friendly	: Git is commonly used with platforms like GitHub, GitLab, and Bitbucket.
+Rollback                : We can easily roll back to previous changes if something doesn’t work properly in the latest version of the code.
+
+
+
+Repository 	: A Git repository (or repo) is basically a storage space for your project where Git tracks all the changes over time.
+
+			Files and folders of your project
+			History of changes (commits)
+			Branches for working on different features
+			Configuration for Git operations
+			
+Repository types	
+	 1:Local repository
+	 2:Remote repository
+
+
+These are hosting platforms for Git repositories.
+
+	GitHub	 	→ Most popular Git hosting platform.
+	GitLab 		→ Git hosting + built-in CI/CD and DevOps tools.
+	Bitbucket	→ Git hosting mainly used with Atlassian tools (like Jira)
+
+
+Problems before git ?
+
+Before Git, teams used centralized version control systems such as:
+
+	-> CVS (Concurrent Versions System)
+	-> Subversion (SVN)
+	-> Perforce
+	
+How centralized version control works ?
+There was one central server, and developers had to stay connected to it to commit, update, or view history. Everyone depended on that server.
+
+Single point of failure					: If the central server went down, no one could work or access the project.
+	No proper coordination while working	: Team members had difficulty collaborating because changes weren’t managed efficiently.
+	No tracking of files for rollback		: Previous versions of files weren’t easily accessible, making it hard to revert to an earlier state.
+	No isolated workspace					: Everyone worked on the same codebase directly, causing conflicts. Let say both the developer working on same
+											file might cause the conflicts easily  due to no isolation workspace.
+
+
+How it works ?
+
+
+
+
+         +--------------------+
+         |  Remote Repository |
+         | (GitHub/GitLab/    |
+         |  Bitbucket)        |
+         +---------+----------+
+                   ^
+                   | push / pull 
+                   | (Finally, we push code to remote repositories using commands like 
+                   |  "git push" or fetch changes using "git pull")
+                   |
+         +---------v----------+
+         |   Local Repository |
+         |   (Commits, Branches) |
+         +---------+----------+
+                   ^
+                   | commit  
+                   | (Once changes look good, we commit files using 
+                   |  "git commit -m 'Message'")
+                   |
+         +---------v----------+
+         |   Staging Area      |
+         |   (Index)           |
+         +---------+----------+
+                   ^
+                   | add       
+                   | (Add files to the staging area using 
+                   |  "git add devops.txt" from the working directory)
+                   |
+         +---------v----------+
+         | Working Directory  |
+         | (Project Files)    |
+         +-------------------+
+
+		 
+	1)Working Directory / Working Area: Where you edit files.
+	2)Staging Area (Index): Where you stage files before committing (git add).
+	3)Local Repository: Where Git stores commits and history (git commit).
+	4)Remote Repository: Cloud storage for your repo (GitHub, GitLab, Bitbucket) where you push/pull changes (git push / git pull).
+
+
+
+Workflow Example:
+
+	Step1:Configure Git in your local machine:
+		  Go to your project directory (E:\Project_folder)
+		  git init
+		  Create a file: devops.txt in the Working Directory.
+		
+	Step2:Stage the file:
+		  git add devops.txt
+		
+		
+	Step3:Commit the changes:
+		  git commit -m "Add devops.txt file"
+		
+	step4:Add remote repository
+	      git remote add origin <remote-repo-URL>
+
+		Origin :origin acts as a bridge or link between your local repository and the remote repository.
+		        which allowing you to push and pull changes easily without typing the full URL every time.
+	
+	Step4:Push the commit to a remote repository:
+		  git push origin main
+
+
+
+
+=======================================================================================================================================================
+Branch Management :
+
+		Branches in Git are separate lines of development in a project.It's like copy of your project where you can make changes independently.
+		change might be adding new features , fixing bugs or doing experimenting by without changing your project main source code
+
+		Key points : 
+					Isolation			: Changes in one branch don’t affect other branches.
+					Experiment safely	: You can try new ideas without breaking the main code(Try something new in a branch—if it fails, delete the branch without affecting anything 
+					Merge later			: When ready, you can combine (merge) the branch back into the main branch.
+
+
+Commands:
+		
+			git branch						List branches	
+			git branch -r                   List remote repository branches(Github/Gitlab...)
+			git branch -a					List all branches (local repo + remote repository branches)
+			git branch    <branch_name>		Create a branch			
+			git switch    <branch_name>		Switch to a branch		
+			git switch -c <branch_name>		Create & switch	(Create the new branch and immediately switch to the new branch)
+
+			
+			git merge     <branch_name>		Merge a branch			
+			git branch -d <branch_name>		Delete a branch		
+			
+
+Git Branch Basics: Inheriting Files and Commits:
+
+		When you are on the master (or main) branch, it has all the current files and commits of your project. 
+		If you create a new branch, like feature, it starts from the same point as master, so it has all the same files and history. 
+		The branches stay the same until you make new changes in either branch, and then they start to differ.
+
+Example:
+
+<Branch_name>    <files,folder,commits..>         
+master
+				  A --- B --- C  (current)
+							\
+feature            			(created here, points to C)
+
+
+
+Creating and Pushing a Branch from Local to Remote Repository in Git :
+ 
+		Git command method => Local branch(Local repository) → push → remote branch(Remote repository).
+		
+		Step 1: Create a branch locally (Local repository)
+		git switch -c feature   # creates and switches to 'feature'
+
+		Step 2: Push the branch to the remote repository(Pushing branch from local repository to remote repository)
+		git push -u origin feature
+
+		Step 3: This lists all branches on the remote repository, including the newly pushed branch.
+		git branch -r
+		
+		
+Merging :(Merge,rebase)
+	
+
+		Git merging is the process of combining changes from one branch into another.
+		Typically, developers work on feature branches while the main branch contains the stable, production-ready code.
+		Once a feature is developed and tested locally, the developer merges the feature branch into the main branch.
+		
+		Git, both merge and rebase integrate changes from one branch into another, but they work differently.
+
+				1)Merge  : Combines branches and creates a merge commit, preserving the full history.
+							
+				Before merge:
+				main:    		A---B    
+				feature:        C---D
+				
+				After merge:
+				main:    		A---B---C---D
+				
+				Resolve Conflicts (if any)
+				git add <file>
+				git merge --continue
+				
+				
+				Note : After merging, your commit log will include one extra commit, the merge commit, which records the fact that a merge occurred. 
+				This helps preserve the history of both branches.
+
+				Merge conflicts :
+					A merge conflict occurs in version control systems like Git when changes from two branches cannot be automatically combined. 
+					It happens when Git cannot determine which change should take precedence because both changes affect the same part of a file. 
+					This requires manual intervention to resolve.
+
+				How conflicts happen's ?
+
+					1)Two developers edit the same line in a file differently.
+					2)One branch deletes a file that another branch modifies.
+					3)Changes in different branches are made in overlapping areas of code that Git cannot auto-merge.
+
+
+
+		Key points :
+		Many teams use Pull Requests (PRs) on platforms like GitHub, GitLab, or Bitbucket.
+		PRs allow team members to review code before merging it into the main branch.
+		This helps catch bugs, enforce coding standards, and maintain code quality.
+				
+				
+				
+				2)rebase : Rebase: Moves your branch on top of another branch, creating a linear history without a merge commit.
+				
+				Before rebase:
+				main:    		A---B
+				feature:      	C---D
+				
+				After rebase:
+				main:    		A---B
+				feature:        C'---D'
+				
+				Resolve Conflicts (if any)
+				git add <file>
+				git rebase --continue
+				
+				Note : No merge commit is needed because the rebase "moves" the feature branch instead of joining it with
+		
+		
+			Key Difference:
+			Merge → preserves history, adds a merge commit.
+			Rebase → rewrites history, keeps it linear, no merge commit.
+		
+		
+git diff :
+		git diff is one of the most important Git commands. It allows you to see what has changed in your code before committing, staging, or merging.
+		
+		- Shows differences between files, commits, or branches.
+		- Helps identify added, removed, or modified lines.
+		- Safe to use: it does not change your files.
+		
+		cmd: git diff
+		Compares your working directory with the last commit.
+		Shows all changes not yet staged for commit.
+
+		cmd: git diff master feature (Two different branches)
+		Shows differences between master and feature branches.
+		Useful before merging branches to see what will change.
+		
+		cmd: git diff <commit1> <commit2>
+		Shows changes introduced between two commits.
+		
+cherry-picking:
+		In Git, cherry-picking is the process of selecting a specific commit from one branch and applying it onto another branch. 
+		Instead of merging the entire branch you pick only the particular changes you need.It’s useful when you want a bug fix or feature from another branch without merging all its history.
+		
+		
+		Example:
+		main branch
+		feature branch
+
+		The feature branch has a commit <abc123> fixing a bug. 
+		cmd: git checkout main
+		cmd: git cherry-pick abc123
+		
+		Now, main has the bug fix without merging all changes from feature.
+
+		Cherry-pick multiple commits: git cherry-pick commit1 commit2 commit3
+
+		If you want to Abort : skip : quit 
+		cmd: "git cherry-pick (--continue | --skip | --abort | --quit)"
+		
+		if you have a range /series of commits to perform cherry-pick
+		cmd: git cherry-pick commit_id^..commit_id
+		
+Tags:
+		Git tags are references to specific points in Git history, typically used to mark releases or important commits.
+		
+		Tag creation:
+		
+			1)Lightweight tags
+			
+				git tag <tag_name>
+				git tag v1.0
+				
+			2)Annotated tags
+			
+				git tag -a <tag_name/version> -m"message_prompt"
+				git tag -a v1.0 -m "Release version 1.0"
+		Tag lis:
+			cmd:git tag			->List out all the tags in repository
+			
+		How to push tag to remote repository 
+			cmd:git push origin v1.0
+			
+		How to delete a tag	
+			cmd:git tag -d v1.0
+	
+		How to delete a tag in remote repository
+			cmd:git push origin --delete <tag_name/version>
+	
+Git reset :
+		git reset is a Git command used to move your current branch (HEAD) to a different commit and optionally change the staging area and working directory depending on the options you use.
+	
+		1)git reset --hard <specific_commit_id>
+			git reset --hard resets three things back to the last commit (or the commit you specify):
+			HEAD → moves to the target commit
+			Staging Area (Index) → all staged changes are removed
+			Working Directory → all uncommitted file changes are deleted
+		2)	
+		
+		
+		
+		
+		3)git push origin main --force  
+			It overwrites the remote branch (main) with your local branch, even if the histories don’t match.
+			
+			Example scenario
+			BEFORE:
+			
+			Remote main has:
+			A → B → C → D
+			
+			You reset to B:
+			git reset --hard B
+			
+			
+			Local main is now:
+			A → B
+			
+			Remote still has:
+			A → B → C → D
+			
+			AFTER
+			git push origin main --force
+			
+			
+			Remote becomes:
+			A → B
+			(commits C and D are gone)
+		
+.gitignore : 
+		
+A .gitignore file tells Git which files or folders it should ignore — meaning Git will not track, stage, or commit them.
+
+
+
+Git Squashing :
+
+			Squashing is the process of combining multiple commits into a single commit. 
+This is useful to clean up your commit history before merging a feature branch into master or another main branch.

@@ -1,0 +1,13 @@
+#!/bin/bash
+
+
+read -s "Enter the DB_username: " USER_NAME
+echo "It doesn't show the Username while prompting "
+echo "Wantedly printing below to show on output what user have entered "
+echo "Entered DB_username is : $USER_NAME"
+
+
+read -s "Enter the DB_passwd: " PASSWD
+echo "It doesn't show the Password while prompting "
+echo "Entered DB_passwd is : $PASSWD"
+echo "Wantedly printing below to show on output what user have entered "

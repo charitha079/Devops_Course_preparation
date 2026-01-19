@@ -1,0 +1,48 @@
+What Are Environment Variables?
+	Environment variables are key–value pairs stored in the shell environment. They help the operating system and applications understand configuration details such as user information
+system paths, executable locations, and runtime configuration.	
+
+Use cases
+	- Pass configuration data to programs
+	- Control shell behavior
+	- Store sensitive or changeable settings
+	- Avoid hard-coding values in scripts
+	
+How Environment Variables Are Used in DevOps ?
+
+Environment variables are extremely important in DevOps because they allow flexible, secure, Cloud deployments, automated configuration across:
+
+	CI/CD pipelines									 :	Used to pass secrets, build parameters, and deployment settings.
+	Docker containers								 :  	Defining environment variables in Dockerfile:
+	Kubernetes clusters								 :	Environment variables for pods:
+	Configuration management (Ansible, Chef, Puppet) 				 :	Using environment variables for playbooks
+	Secrets and API keys							 	 :	API key, Database passwords, Cloud credentials
+
+
+Examples:	
+	echo $HOME
+	$HOME is an environment variable that stores your home directory path, e.g. /home/ubuntu.
+	
+	echo $PATH
+	This variable contains directories the shell searches when running commands.
+	
+	creating your own:
+	MYNAME="Kind_of_variable_or_name_or_Password_or_secret_or_Hardcoded_variable_anything"
+	echo $MYNAME
+	
+	Set Temporary Environment Variables : These variables last only for the current shell/session. When you close the terminal, MYVAR disappears.
+	export MYVAR="hello"
+	
+	To make them Permanent Environment Variables
+	
+	For bash:
+	~/.bashrc (most common)
+	~/.bash_profile or ~/.profile (login shells)
+	
+			Step 1: nano ~/.bashrc                    ---->Edit the shell config file
+			Step 2: export MYVAR="hello-world"        ---->Add this to the file
+			Step 3: source ~/.bashrc                  ---->Save and reload
+
+			Now MYVAR will persist across sessions.
+	For zsh:
+	~/.zshrc

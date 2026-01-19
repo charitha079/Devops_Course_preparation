@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# Arguments : Command-line arguments are values passed to a program or script when it is executed. In Bash, they are referenced using positional parameters.
+
+echo " Argument information "
+
+#	Argument	Meaning
+#	---------------------------------
+#	$0			The script name
+#	$1			First argument
+#	$2			Second argument
+#	$@			All arguments
+#	$#			Number of arguments
+
+echo "=============================================================================="
+
+echo "Arguments for this script"
+echo "Script name: $0"
+echo "First argument: $1"
+echo "Second argument: $2"
+echo "All arguments: $@"
+echo "Total number: $#"
+
+
+# sh script.sh Linux Shell_scripting Ansible Git Github Gitlab_ci_cd Jenkins Aws Terraform Docker Kubernetes

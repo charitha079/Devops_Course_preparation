@@ -1,0 +1,181 @@
+What is shell scripting ?
+	Shell scripting is a text file with a list of commands that instruct an operating system to perform certain tasks or to perform the repetitive tasks.
+
+
+How shell scripting used in devops and cloud ?
+	Shell scripting in DevOps and Cloud refers to writing scripts using a command-line shell (like Bash, Sh in Linux, or PowerShell in Windows) to automate repetitive tasks, manage infrastructure, and streamline deployment processes.
+
+
+Shell Scripting usage in DevOps & Cloud
+ 
+
+	- Automated Server Setup
+	  Installing packages, updating systems, creating users, setting permissions.
+	
+	- CI/CD Pipeline Tasks
+	  Building code, running tests, packaging applications (often used in Jenkins, GitLab CI, GitHub Actions).
+	
+	- Container Operations
+	  Automating Docker image builds, container cleanup, Kubernetes CLIs (kubectl automation).
+	
+	- Log Management
+	  Searching, filtering, archiving, and analyzing logs using grep, awk, sed.
+	
+	- Cron Jobs
+	  Scheduling automated tasks (backups, cleanup, status checks).
+	  
+	  
+	==============================================================	
+	
+	Shell script components :
+	
+	Usually a shell is nothing but an interface between the USER and OPERATING SYSTEM. (Zsh,sh,powershell,Bash -----shells)
+	
+							#!/bin/bash                               ------>Script first line
+							
+							# Statements or commands to be executed
+							echo "This is a shell script running!"
+	
+	
+			1)	#! 								---> A shebang is the first line of a script that tells the operating system which interpreter should run the script.
+			2)	chmod +x script.sh				---> Give enough permission to execute script
+			3)	./script.sh (or) sh script.sh 	--->Execute script
+	
+	
+	for python scripts	
+			script name : script.py
+			
+						  #!/usr/bin/python3   ---> The first line (shebang) tells Linux to use Python 3 interpreter
+						  print("This is a Python script!")
+
+			Execution	: python3 script.py		
+			
+	for node js scripts 
+			script name : app.js
+			
+						  #!/usr/bin/node		---> Shebang tells Linux to use Node interpreter
+						  console.log("This is a Node.js script!");
+						  
+			Execution	: node app.js
+	==============================================================
+
+Why shell script needed in devops - Let's do a hand's-on task about to install docker on linux machine on Manual mode and Script mode 
+
+
+1) Manual Mode — Running each command one by one takes time and some times leads to human errors
+
+	> Install DNF Plugins Core
+	
+				command:	sudo dnf -y install dnf-plugins-core
+		
+		What it does and Why it’s needed:
+		Installs the dnf-plugins-core package, which provides extra DNF utilities and plugins.
+		One of the plugins we need is config-manager, which allows us to add and manage repositories. Without this, we couldn’t add the Docker repository.
+		
+		
+	> Pre-installation / Setup prerequisite.
+		
+		Step 2: Add Docker Repository
+				command:	sudo dnf config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+		
+		
+		What it does and Why it’s needed:
+		Adds the official Docker repository to your system. This is where DNF will look for Docker packages.
+		CentOS/RHEL default repositories do not contain the latest Docker packages, so we need Docker’s official repository to install the most up-to-date version.
+		
+	> Repository configuration.
+		
+		Step 3: Enable Docker Stable Repository
+		sudo dnf config-manager --set-enabled docker-ce-stable
+		
+		
+		What it does and Why it’s needed:
+		Ensures that the docker-ce-stable repository is enabled.
+		Docker’s repo contains multiple channels (stable, test, nightly). Enabling the stable channel ensures we install a stable, production-ready version of Docker.
+		
+	> Repository configuration (enabling correct channel).
+		
+		Step 4: Install Docker
+		sudo dnf install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+		
+		
+		What it does:
+		Installs:
+		
+		docker-ce 				→ Docker Engine (core Docker daemon).
+		docker-ce-cli 			→ Docker Command Line Interface.
+		containerd.io 			→ Container runtime that Docker uses under the hood.
+		docker-buildx-plugin 	→ Advanced build tool for multi-architecture images.
+		docker-compose-plugin 	→ Docker Compose functionality for defining multi-container apps.
+		
+		What it does and Why it’s needed:
+		This is the main installation step—without this, Docker won’t exist on your system. Installing all these ensures you have a fully functional Docker environment.
+		
+	> Installation.
+		
+		Step 5: Start Docker Service
+		sudo systemctl start docker
+		
+		
+		What it does and Why it’s needed:
+		Starts the Docker daemon immediately.
+		Docker must be running before you can use it. Without starting the service, Docker commands won’t work.
+		
+	> Service initialization.
+		
+		Step 6: Enable Docker on Boot
+		sudo systemctl enable docker
+		
+		
+		What it does and Why it’s needed:
+		Configures the system to automatically start Docker on system boot.
+		So that Docker is always available after a reboot without manually starting it.
+		
+	> Service configuration / automation.
+		
+		Step 7: Restart Docker
+		sudo systemctl restart docker
+		
+		
+		What it does and Why it’s needed:
+		Restarts the Docker daemon.
+		Ensures that any configuration changes or newly installed plugins take effect. It’s a common step to refresh the service after installation.
+		
+		
+		
+	NOTE:	If you install Docker manually on one machine, it doesn’t take much time. But imagine needing to install the same software (like Docker) on 10+ machines.
+			As the number of servers increases, the manual process scales linearly 
+			More machines = More time + More human errors.
+			
+		
+2) Script Mode — Automated installation using a shell script
+		
+		Step 1: nano install_docker.sh			----> Create a script file
+		
+		Step 2: write down the below scripts in  on install_docker.sh file
+
+				#!/bin/bash
+				
+				echo "---- Installing Docker on Linux ----"
+				
+				# Step 1
+				sudo dnf -y install dnf-plugins-core
+				
+				# Step 2
+				sudo dnf config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+				
+				# Step 3
+				sudo dnf config-manager --set-enabled docker-ce-stable
+				
+				# Step 4
+				sudo dnf install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+				
+				# Step 5 & 6
+				sudo systemctl enable --now docker
+				
+				# Step 7
+				sudo systemctl restart docker
+				
+				echo "---- Docker Installation Complete ----"
+				docker --version
+	NOTE: 	A shell script lets you write commands once and run them anywhere, so installations become Faster Automated, Consistent, Repeatable, Scalable for hundreds/thousands of machines.

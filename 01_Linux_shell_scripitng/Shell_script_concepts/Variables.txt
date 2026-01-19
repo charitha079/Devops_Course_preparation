@@ -1,0 +1,50 @@
+#!/bin/bash
+
+# Topic : Shell scripting _ Variables
+# In Bash, variables do not have data types like in languages such as C, Java, or Python.Everything stored in a Bash variable is treated as a string by default.
+
+# Variables : In shell scripting (like Bash), variables allow you to store and reuse data.
+
+NAME=Pradeep
+PROFESION=Software_engineer
+
+echo "My name is $NAME and working as a $PROFESION"
+
+VARIABLE_01=99days
+VARIABLE_02=of
+VARIABLE_03=devops
+
+echo "Printing all variables "
+echo "$VARIABLE_01,  $VARIABLE_02 , $VARIABLE_03"
+
+
+# Reading Input into a Variable
+#read USERNAME waits for the user to type something and presses Enter.The input gets stored in the variable USERNAME.
+
+echo "Read input into a USERNAME "
+read USERNAME
+echo "Printing out the user input value is : ${USERNAME} "
+echo "====================================================="
+
+echo "Enter your favourite DISH:"
+read DISH
+echo "Printing your favourite dish , $DISH!"
+echo "====================================================="
+
+# User Input Variable : Because its value comes directly from the user through the read command.
+
+echo "User input variable"
+read -p "Enter your favourite game: " game 
+echo "you told me about this game $game"
+echo "====================================================="
+
+
+# Command/Substitution Variable ---Input_variable=$(Command)
+
+TODAYS_DATE=$(date)
+echo "Printing out today's_date is  $TODAYS_DATE "
+echo "====================================================="
+
+LISTINGOUT_FILES=$(ls -l /)
+echo "List of the files : ${LISTINGOUT_FILES}"
+

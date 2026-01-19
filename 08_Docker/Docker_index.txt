@@ -14,7 +14,6 @@ Goal	: Understand what Docker is, why containers matter, and basic commands.
 			docker ps, docker images
 			docker stop, docker rm 
 		- Container lifecycle
-		- Understanding ports and networking basics
 	
 	Hands-on:
 		- Run your first container (hello-world, nginx)
