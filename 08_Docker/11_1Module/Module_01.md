@@ -1,7 +1,8 @@
 # Dockerfile Guide
 
 ## 1) What is a Dockerfile?
-A **Dockerfile** is a text file that contains a set of instructions to automatically build a Docker image. It defines how an application and its environment are packaged, ensuring the app runs consistently across development, testing, and production.
+
+  A **Dockerfile** is a text file that contains a set of instructions to automatically build a Docker image. It defines how an application and its environment are   packaged, ensuring the app runs consistently across development, testing, and production.
 
   ### What a Dockerfile does:
    - Specifies the base image (OS / runtime)  
@@ -9,26 +10,25 @@ A **Dockerfile** is a text file that contains a set of instructions to automatic
    - Copies application code  
    - Configures environment variables  
    - Defines how the container starts  
-	
-Docker processes the Dockerfile sequentially, and most instructions create **immutable filesystem layers**, while some add **metadata**.
+  Docker processes the Dockerfile sequentially, and most instructions create **immutable filesystem layers**, while some add **metadata**.
 
 ---
 
 ## 2) Dockerfile Instructions
 
-| Instruction | Description 												|
-|-------------|-------------------------------------------------------------|
-| `FROM`      | Base image 													|
-| `WORKDIR`   | Working directory inside container 							|
-| `COPY`      | Copy files into image 										|
-| `ADD`       | Similar to COPY but with extra behavior (auto-extract, URLs)|
-| `RUN`       | Execute commands during build		 						|
-| `ENV`       | Set environment variables 									|
-| `EXPOSE`    | Document container port 									|
-| `CMD`       | Default command, can be overridden at runtime			 	|
-| `ENTRYPOINT`| Fixed command, arguments can be appended 				|
+  | Instruction | Description 							|
+  |-------------|---------------------------------------------------------------|
+  | `FROM`      | Base image 							|
+  | `WORKDIR`   | Working directory inside container 				|
+  | `COPY`      | Copy files into image 					|
+  | `ADD`       | Similar to COPY but with extra behavior (auto-extract, URLs) 	|
+  | `RUN`       | Execute commands during build		 			|
+  | `ENV`       | Set environment variables 					|
+  | `EXPOSE`    | Document container port 					|
+  | `CMD`       | Default command, can be overridden at runtime		 	|
+  | `ENTRYPOINT`| Fixed command, arguments can be appended 			|
 
-### Example Dockerfile:
+  ### Example Dockerfile:
 		
 			FROM node:18-alpine
 			WORKDIR /app
@@ -37,12 +37,11 @@ Docker processes the Dockerfile sequentially, and most instructions create **imm
 			COPY . .
 			EXPOSE 3000
 			CMD ["npm", "start"]
+			
+---
 		
-		
-		---
-
 ## 3) Building and Tagging Images
-1) Building an image
+  1) Building an image
 	  - Docker images are built from a Dockerfile using the `docker build` command.
 		
 		```bash
@@ -53,8 +52,8 @@ Docker processes the Dockerfile sequentially, and most instructions create **imm
 	  - `.`   : Build context (current directory) — the directory Docker uses to access files during image creation  
 	  - Docker reads the Dockerfile **instruction by instruction**  
 	  - Each instruction creates a new **immutable layer**
-    
-2) Tagging images
+   - 
+  2) Tagging images
 	  - Tags are used for **versioning** and **release management**.
 		
 		```bash
@@ -64,10 +63,10 @@ Docker processes the Dockerfile sequentially, and most instructions create **imm
 	  - Required for pushing images to Docker Hub / ECR / GCR  
 	  - Enables rollback by reusing older tags  
 		
-		> **Note:** Tagging is critical in CI/CD pipelines to ensure **traceability** and **reproducibility** of deployments.
+	   **Note:** Tagging is critical in CI/CD pipelines to ensure **traceability** and **reproducibility** of deployments.
 		
-	---
 	
+---	
 ## 4) Understanding Layers and Caching
   ### Docker Image Layers
   Docker images are a **stack of layers**, not a single file.
@@ -114,16 +113,17 @@ Docker processes the Dockerfile sequentially, and most instructions create **imm
 
 ## 5) Best Practices for Dockerfile Optimization
 
-1. **Use minimal base images**
+  1. **Use minimal base images**
 	```
-	FROM node:18-alpine
+	FROM node:18-alpine       
 	```
 	- Smaller image size  
 	- Faster pulls  
 	- Reduced attack surface  
 	
-2. **Use multi-stage builds**
-	```dockerfile
+ 2. **Use multi-stage builds**
+
+	```
 	FROM node:18 AS build
 	RUN npm run build
 	
@@ -134,23 +134,23 @@ Docker processes the Dockerfile sequentially, and most instructions create **imm
 	- Removes build tools from runtime image  
 	- Standard in production to separate build-time and runtime concerns  
 	
-3. **Minimize number of layers**
+4. **Minimize number of layers**
 	```dockerfile
 	RUN apt update && apt install -y curl
 	```
 	- Combine related RUN commands  
 	
-4. **Avoid running containers as root**
+5. **Avoid running containers as root**
 	```dockerfile
 	USER node
 	```
 	- Improves security  
 	
-5. **Use `.dockerignore`**
+6. **Use `.dockerignore`**
 	- Prevents unnecessary files from entering the image  
 	- Reduces build time and image size  
 	
-6. **Prefer COPY over ADD**
+7. **Prefer COPY over ADD**
 	- COPY is **explicit and predictable**  
 	- ADD has extra behavior (auto-extract, URLs)	
 	> Dockerfile optimization impacts **image size**, **security**, **deployment speed**, and **scalability** in production environments.
