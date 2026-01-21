@@ -112,5 +112,5 @@ Kubernetes is inherently a clustered system. Even the smallest Kubernetes setup 
 					- kube-proxy  
 					- Container Runtime
 		
-		 <h2>Kubernetes Architecture</h2>
-		 <img src="Images/00_Kubernetes_Architecture_001.png" width="800">
+<h2>Kubernetes Architecture</h2>
+<img src="Images/00_Kubernetes_Architecture_001.png" width="800">
