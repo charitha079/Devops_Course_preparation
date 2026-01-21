@@ -96,8 +96,8 @@
 	
 	
 	
-###	3)Kubernetes architecture  
-		Kubernetes is inherently a clustered system. Even the smallest Kubernetes setup is logically a cluster consisting of a control plane and one or more worker nodes.
+###	3)	Kubernetes architecture  
+Kubernetes is inherently a clustered system. Even the smallest Kubernetes setup is logically a cluster consisting of a control plane and one or more worker nodes.
 		
 			- Cluster = Control plane + Worker node(s)
 			
@@ -111,4 +111,6 @@
 					- kubelet  
 					- kube-proxy  
 					- Container Runtime
-	
+		
+		 <h2>Kubernetes Architecture</h2>
+		 <img src="Images/00_Kubernetes_Architecture_001.png" width="800">
