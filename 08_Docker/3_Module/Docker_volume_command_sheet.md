@@ -75,10 +75,9 @@ docker run -v myvol:/path image
   		-v myvol:/usr/share/nginx/html \
   		nginx
     ----------------------------------------
-Write data inside container:
-	```bash
-		docker exec web1 sh -c "echo Hello > /usr/share/nginx/html/index.html"
-	```
+	Write data inside container:
+		command : docker exec web1 sh -c "echo Hello > /usr/share/nginx/html/index.html"
+	---------------------------------------	
 
 Remove container:
 ```bash
