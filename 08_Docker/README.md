@@ -22,6 +22,7 @@ Goal	: Understand what Docker is, why containers matter, and basic commands.
 
 Module 2: Docker Images and Dockerfile
 Goal: Learn to create custom Docker images from scratch.
+
 	Topics:
 		- What is a Dockerfile?
 		- Dockerfile instructions: FROM, RUN, COPY, ADD, WORKDIR, CMD, ENTRYPOINT, ENV
@@ -130,9 +131,8 @@ Goal	: Learn to deploy containers in cloud environments.
 		- Optional: Deploy a simple app on Kubernetes
 
 Module 10: Projects & Portfolio
-Goal: Apply everything in real-world projects.
-
 Project Ideas:
+
 	1:	Flask + MySQL + Docker Compose	
 		Fully containerized app, persistent DB, custom networks.
 	2:	Node.js + Redis + Docker
