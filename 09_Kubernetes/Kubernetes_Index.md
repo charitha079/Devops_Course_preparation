@@ -23,17 +23,17 @@ Understand why Kubernetes exists and the problems it solves.
 	- Cluster concepts
 	- Kubernetes vs Docker Swarm
 
-		### Hands-on
-		- Install `kubectl`
-		- Setup Minikube / Kind
-		- Verify cluster:
+  ### Hands-on
+   - Install `kubectl`
+   - Setup Minikube / Kind
+   - Verify cluster:
 						```bash
 						kubectl version
 						kubectl get nodes
 						kubectl cluster-info
 						```
 						
-						---
+---
 
 ## Module 2: Kubernetes Core Objects
 Learn the fundamental building blocks.
