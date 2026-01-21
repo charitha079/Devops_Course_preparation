@@ -11,7 +11,7 @@
 															
 		'''
 		
-		Workflow: Docker Engine receives container requests via the Docker CLI using the REST API, pulls required images from 	a  registry, manages container lifecycle through containerd, executes containers using runc, and enforces isolation and resource limits using Linux namespaces and cgroups.
+		Workflow: Docker Engine receives container requests via the Docker CLI using the REST API, pulls required images from 	       a  registry, manages container lifecycle through containerd, executes containers using runc, and enforces          isolation and resource limits using Linux namespaces and cgroups.
 		
 		Component			Responsibility
 		=========			===================================================
@@ -22,21 +22,32 @@
 		Storage Driver		Manages container and image files
 		Volume Driver		Stores data safely outside containers
 		
-		
-### 2)Docker storage 
-		Docker storage defines how container data is stored, shared, and persisted beyond the container lifecycle.
-		Since containers are ephemeral, Docker provides multiple storage mechanisms to manage application and stateful data.
-		
-		Containers use a layered filesystem where image layers are immutable and shared, and each container gets a thin writable layer using copy-on-write. This writable layer stores runtime changes like logs and temp files and is lost when the container is removed, which is why persistent data is handled using volumes in production.
-			Docker Uses Layered Filesystems
-			Image layers		Read-only
-			Container layer		Writable
-				
-				
-				Storage drivers manage image layers and writable layers.
+### 2)Docker Storage
+		Docker storage defines how container data is stored, shared, and persisted beyond the container's lifecycle. Since containers are ephemeral by nature, Docker provides mechanisms to manage application data and stateful data efficiently.
 
-### 3)Bind mounts vs volumes
-		Containers are ephemeral, so Docker uses volumes for persistent storage
+	1. Layered Filesystem
+		Docker uses a layered filesystem
+		Image layers	: Immutable and read-only and shared across the container for effective disk space
+		Container layer	: Thin writable layer created on top of image layers. Stores runtime changes like.
+						- Logs
+						- Temporary files
+						- Runtime configurations
+						
+		Note : This writable layer is lost when the container is removed, which is why persistent data should be managed using     	 volumes or bind mounts in production.
+	
+	2. 	Storage Drivers
+		Storage drivers manage the image layers and the container writable layer.
 		
-###	4)Named volumes
-		Inspecting volumes
+			Common storage drivers include:
+				- overlay2 (most common for Linux)
+				- aufs (older Linux systems)
+				- btrfs, zfs (advanced use cases)
+				- windowsfilter (for Windows containers)
+		
+		They implement copy-on-write (CoW) to efficiently manage changes without duplicating the entire image.
+	
+	3. 	Volumes and Persistent Storage
+		Since container layers are ephemeral, Docker provides volumes for persistent storage:
+		Volumes			: Managed by Docker, can be shared across containers.
+		Bind mounts		: Map host directories into containers, useful for development.
+		tmpfs mounts	: Store data in RAM, data disappears when container stops.
