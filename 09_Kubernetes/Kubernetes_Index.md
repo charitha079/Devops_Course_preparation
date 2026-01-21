@@ -45,14 +45,14 @@ Learn the fundamental building blocks.
 	- Namespaces
 	- Labels & Selectors
 	
-		### Hands-on
-		- Create a Pod using YAML
-		- Create a Deployment
-		- Scale replicas
-		- Delete and recreate Pods
-		- Explore namespaces
+### Hands-on
+   - Create a Pod using YAML
+   - Create a Deployment
+   - Scale replicas
+   - Delete and recreate Pods
+   - Explore namespaces
 		
-		---
+---
 
 ## Module 3: Kubernetes Services & Networking
 Understand how Pods communicate internally and externally.
