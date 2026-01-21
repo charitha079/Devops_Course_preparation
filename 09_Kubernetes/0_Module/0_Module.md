@@ -55,7 +55,7 @@ As companies began moving from monolithic applications to microservices, they st
 			- upgrades
 			- This is why Kubernetes apart form all orchetration platforms kubernetes became essential for modern production 	    systems for its features.
 	
- Challenges solved by kubernetes
+ 	Challenges solved by kubernetes
 	
 		1) Automation :		
 			- Automatically deploy, restart, scale, and manage containers
@@ -81,7 +81,7 @@ As companies began moving from monolithic applications to microservices, they st
 			- Kubernetes removes this risk by running your app across multiple servers with automatic recovery.	
 	
 	
-Orchestration Summary : 
+	Orchestration Summary : 
 		- Containers made deployment easier—but managing thousands of containers made operations harder.		
 		- Kubernetes is an open-source container orchestration platform that runs, manages, scales, and heals containerized applications automatically.
 		  Problems solved by kubernetes :
