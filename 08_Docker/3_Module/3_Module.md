@@ -1,7 +1,7 @@
-###	1)Docker Engine
-		Docker Engine is the core runtime that builds, runs, and manages containers by interacting with the host OS kernel and system resources.
+###	1) 	Docker Engine
+
+Docker Engine is the core runtime that builds, runs, and manages containers by interacting with the host OS kernel and system resources.
 		
-		'''
 				Docker CLI  →  Docker REST API  →  Docker Daemon (dockerd)
 														|
 														├── containerd
@@ -9,9 +9,7 @@
 														├── Storage Drivers
 														├── Volume Drivers
 															
-		'''
-		
-		Workflow: Docker Engine receives container requests via the Docker CLI using the REST API, pulls required images from 	       a  registry, manages container lifecycle through containerd, executes containers using runc, and enforces          isolation and resource limits using Linux namespaces and cgroups.
+	Workflow: Docker Engine receives container requests via the Docker CLI using the REST API, pulls required images from  a  registry, manages container lifecycle     through containerd, executes containers using runc, and enforces isolation and resource limits using Linux namespaces and cgroups.
 		
 		Component			Responsibility
 		=========			===================================================
@@ -23,7 +21,8 @@
 		Volume Driver		Stores data safely outside containers
 		
 ### 2)Docker Storage
-		Docker storage defines how container data is stored, shared, and persisted beyond the container's lifecycle. Since containers are ephemeral by nature, Docker provides mechanisms to manage application data and stateful data efficiently.
+
+Docker storage defines how container data is stored, shared, and persisted beyond the container's lifecycle. Since containers are ephemeral by nature, Docker provides mechanisms to manage application data and stateful data efficiently.
 
 	1. Layered Filesystem
 		Docker uses a layered filesystem
@@ -33,7 +32,7 @@
 						- Temporary files
 						- Runtime configurations
 						
-		Note : This writable layer is lost when the container is removed, which is why persistent data should be managed using     	 volumes or bind mounts in production.
+		Note : This writable layer is lost when the container is removed, which is why persistent data should be managed using  volumes or bind mounts in                   production.
 	
 	2. 	Storage Drivers
 		Storage drivers manage the image layers and the container writable layer.
