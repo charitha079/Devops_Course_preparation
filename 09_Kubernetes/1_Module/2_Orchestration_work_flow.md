@@ -100,11 +100,11 @@ Summary :
 - Kubernetes Orchestration is automated process of maintaining the desired state of containerized applications by cordinating with control plane decissions
   and worked node execution across a cluster.
 		
-- API Server								:Acts as the central entry point of the cluster, handling all requests and communication between components.
-- Scheduler									:Assigns newly created Pods to suitable worker nodes based on resource availability and constraints.
-- Controller Manager						:Continuously monitors the cluster and ensures the actual state matches the desired state.
-- etcd										:A distributed key-value store that permanently stores the cluster’s configuration and state.
-- kubelet									:An agent that runs on each worker node and ensures Pods are running as instructed by the control plane.
-- Container Runtime (Docker / containerd)	:Responsible for pulling images and creating, starting, and stopping containers.
-- CNI (Container Network Interface)			:Provides networking for Pods, enabling pod-to-pod and pod-to-service communication.
-- kube-proxy								:Manages network rules on the node to route traffic to the correct Pods and Services.
+		- API Server								:Acts as the central entry point of the cluster, handling all requests and communication between components.
+		- Scheduler									:Assigns newly created Pods to suitable worker nodes based on resource availability and constraints.
+		- Controller Manager						:Continuously monitors the cluster and ensures the actual state matches the desired state.
+		- etcd										:A distributed key-value store that permanently stores the cluster’s configuration and state.
+		- kubelet									:An agent that runs on each worker node and ensures Pods are running as instructed by the control plane.
+		- Container Runtime (Docker / containerd)	:Responsible for pulling images and creating, starting, and stopping containers.
+		- CNI (Container Network Interface)			:Provides networking for Pods, enabling pod-to-pod and pod-to-service communication.
+		- kube-proxy								:Manages network rules on the node to route traffic to the correct Pods and Services.
