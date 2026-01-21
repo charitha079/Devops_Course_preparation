@@ -64,16 +64,17 @@ docker volume inspect myvol
 
 
 ## 4. Use a Volume in a Container
-
+```bash
 docker run -v myvol:/path image
-
+```
 
    	### Example: Persist Nginx Website Data
+	```bash
 	docker run -d \
   		--name web1 \
   		-v myvol:/usr/share/nginx/html \
   		nginx
-
+    ```
 
 	Write data inside container:
 	docker exec web1 sh -c "echo Hello > /usr/share/nginx/html/index.html"
