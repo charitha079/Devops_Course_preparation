@@ -69,27 +69,28 @@ docker volume inspect myvol
 	
 	command: docker run -v myvol:/path image
 	
-   	Example: Persist Nginx Website Data
+   	Example: Persist Nginx Website Data :
     -----------------------------------------
-	docker run -d \
-  		--name web1 \
-  		-v myvol:/usr/share/nginx/html \
-  		nginx
+							docker run -d \
+  								--name web1 \
+  								-v myvol:/usr/share/nginx/html \
+  							nginx
     ----------------------------------------
 	Write data inside container:
 	
 		command : docker exec web1 sh -c "echo Hello > /usr/share/nginx/html/index.html"
 	---------------------------------------	
 
-	Remove container: docker rm -f web1
+	Remove container: 
+					docker rm -f web1
 	
-	Run a new container with same volume:
-	
-		docker run -d \
-	  		--name web2 \
-	  		-v myvol:/usr/share/nginx/html \
-	  	nginx
-
+	Run a new container with same volume :
+	---------------------------------------
+					docker run -d \
+	  					--name web2 \
+	  					-v myvol:/usr/share/nginx/html \
+	  				nginx
+	------------------------------------
 	Data persists across containers
 
 ---
