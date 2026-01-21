@@ -24,11 +24,13 @@ To persist data beyond the container lifecycle, Docker provides **Volumes** and 
 ## 1. Create a Volume
 
 docker volume create myvol
-		What happens?
-			Docker creates a managed storage location on the host
-		Default path:
-			> /var/lib/docker/volumes/myvol/_data
-			> Volume exists independently of containers
+
+- What happens?
+	Docker creates a managed storage location on the host
+
+	Default path:
+		> /var/lib/docker/volumes/myvol/_data
+		> Volume exists independently of containers
 		
 
 
