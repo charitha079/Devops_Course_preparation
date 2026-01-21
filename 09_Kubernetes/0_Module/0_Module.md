@@ -1,12 +1,10 @@
-### 1)What is Kubernetes?
-		Kubernetes is an open-source container orchestration platform that automates deployment, scaling, self-healing, and lifecycle management of containerized applications, ensuring high availability across distributed infrastructure.
+### 1)		What is Kubernetes?
+Kubernetes is an open-source container orchestration platform that automates deployment, scaling, self-healing, and lifecycle management of containerized applications, ensuring high availability across distributed infrastructure.
 		
 			Containers vs Pods
 			
-###	2)Container Orchestration :
-
-		As companies began moving from monolithic applications to microservices, they started running hundreds or thousands of containers. Running all of them manually quickly became impossible.
-		at that point of time they faced below mentioned problems mostly when running containers in production especially when demand Fluctuated.
+###	2)	Container Orchestration :
+As companies began moving from monolithic applications to microservices, they started running hundreds or thousands of containers. Running all of them manually quickly became impossible,At that point of time they faced below mentioned problems mostly when running containers in production especially when demand Fluctuated.
 
 
 		1)	Manual scaling:
@@ -46,7 +44,7 @@
 			- Containers made deployment easier—but managing thousands of containers made operations harder.
 		
 		9) 	Single server dependency
-			- Single server dependency means the entire application relies on one server, so if that server fails, a single point of failure occurs and the whole application goes down.
+			- Single server dependency means the entire application relies on one server, so if that server fails, a single point of failure occurs and the whole 			  application goes down.
 
 		Orchestration platforms automated the whole lifecycle:
 			- deployment
@@ -112,5 +110,5 @@ Kubernetes is inherently a clustered system. Even the smallest Kubernetes setup 
 					- kube-proxy  
 					- Container Runtime
 		
-<h2>Kubernetes Architecture</h2>
-<img src="Images/00_Kubernetes_Architecture_001.png" width="800">
+### <h2>Kubernetes Architecture</h2>
+   <img src="Images/00_Kubernetes_Architecture_001.png" width="800">
