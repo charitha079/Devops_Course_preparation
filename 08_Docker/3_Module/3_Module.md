@@ -1,4 +1,4 @@
-###	1) 	Docker Engine
+###	1)		Docker Engine
 
 Docker Engine is the core runtime that builds, runs, and manages containers by interacting with the host OS kernel and system resources.
 		
@@ -20,7 +20,7 @@ Docker Engine is the core runtime that builds, runs, and manages containers by i
 		Storage Driver		Manages container and image files
 		Volume Driver		Stores data safely outside containers
 		
-### 2)Docker Storage
+### 2		)Docker Storage
 
 Docker storage defines how container data is stored, shared, and persisted beyond the container's lifecycle. Since containers are ephemeral by nature, Docker provides mechanisms to manage application data and stateful data efficiently.
 
