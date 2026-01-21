@@ -58,9 +58,11 @@ docker volume inspect myvol
 				"Scope": "local"
 			}
 		]
+		---------------------------------------------------------------
 			Key Fields
 			**Mountpoint** 	→ Actual host directory
 			**Driver** 		→ Volume driver (`local` by default)
+		---------------------------------------------------------------
 
 
 ## 4. Use a Volume in a Container
