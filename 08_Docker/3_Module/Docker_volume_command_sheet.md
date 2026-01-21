@@ -1,28 +1,26 @@
-# Docker Volumes – Persistent Storage
+# Docker Volumes – Persistent Storage - command sheet
 
-This README explains **Docker Volumes** from **basics to production-ready understanding**, with commands and real examples.
-
----
 
 ## Why Do We Need Volumes?
 Containers are **ephemeral** by nature.
 - Container data is stored in a **writable layer** on top of image layers
 - When a container is **removed**, its writable layer is **lost**
 
-👉 To persist data beyond the container lifecycle, Docker provides **Volumes** and **Bind Mounts**.
+To persist data beyond the container lifecycle, Docker provides **Volumes** and **Bind Mounts**.
 
 ---
 
 ## Volume Commands Overview
-```bash
-docker volume create vol
-docker volume ls
-docker volume inspect vol
-docker volume rm vol
-docker volume prune
-docker run -v vol:/path image
-docker run -v /host:/path image
-```
+
+	```bash
+	docker volume create vol
+	docker volume ls
+	docker volume inspect vol
+	docker volume rm vol
+	docker volume prune
+	docker run -v vol:/path image
+	docker run -v /host:/path image
+	```
 
 ---
 
@@ -32,15 +30,15 @@ docker run -v /host:/path image
 docker volume create myvol
 ```
 
-### What happens?
-- Docker creates a managed storage location on the host
-- Default path:
-  ```
-  /var/lib/docker/volumes/myvol/_data
-  ```
-- Volume exists independently of containers
-
-✔ Recommended for **production workloads**
+		### What happens?
+		- Docker creates a managed storage location on the host
+		- Default path:
+		```
+		/var/lib/docker/volumes/myvol/_data
+		```
+		- Volume exists independently of containers
+		
+		Recommended for **production workloads**
 
 ---
 
@@ -48,16 +46,16 @@ docker volume create myvol
 
 ```bash
 docker volume ls
-```
-
-Example output:
-```text
-DRIVER    VOLUME NAME
-local     myvol
-local     db_data
-```
-
----
+	```
+	
+	Example output:
+			```text
+			DRIVER    VOLUME NAME
+			local     myvol
+			local     db_data
+			```
+	
+	---
 
 ## 3. Inspect a Volume
 
@@ -65,17 +63,17 @@ local     db_data
 docker volume inspect myvol
 ```
 
-Example output:
-```json
-[
-  {
-    "Name": "myvol",
-    "Driver": "local",
-    "Mountpoint": "/var/lib/docker/volumes/myvol/_data",
-    "Scope": "local"
-  }
-]
-```
+	Example output:
+		```json
+		[
+		{
+			"Name": "myvol",
+			"Driver": "local",
+			"Mountpoint": "/var/lib/docker/volumes/myvol/_data",
+			"Scope": "local"
+		}
+		]
+		```
 
 ### Key Fields
 - **Mountpoint** → Actual host directory
@@ -149,9 +147,9 @@ On host:
 cat /tmp/appdata/file.txt
 ```
 
-✔ Direct host access
-⚠ Host dependent
-⚠ Less portable
+Direct host access
+Host dependent
+Less portable
 
 ---
 
@@ -215,19 +213,16 @@ docker run -d -v shared:/data app2
 
 ---
 
-## Interview One-Liner
 
-> Docker volumes store data outside the container writable layer, enabling persistence, container replacement, and production-grade state management.
+## Summary
+	- Containers are ephemeral
+	- Volumes provide persistent storage
+	- Volumes are **production-ready**	
+	- Bind mounts are **host-dependent**
 
----
-
-## Conclusion
-- Containers are ephemeral
-- Volumes provide persistent storage
-- Volumes are **production-ready**
-- Bind mounts are **host-dependent**
 
 ---
 
-Happy Learning 🚀
+Happy Learning
 
+---
