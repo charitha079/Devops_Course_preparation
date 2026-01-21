@@ -68,17 +68,17 @@ docker volume inspect myvol
 docker run -v myvol:/path image
 ```
 
-   	### Example: Persist Nginx Website Data
-	```bash
+   	Example: Persist Nginx Website Data
+    -----------------------------------------
 	docker run -d \
   		--name web1 \
   		-v myvol:/usr/share/nginx/html \
   		nginx
-    ```
-
-	Write data inside container:
-	docker exec web1 sh -c "echo Hello > /usr/share/nginx/html/index.html"
-
+    ----------------------------------------
+Write data inside container:
+	```bash
+		docker exec web1 sh -c "echo Hello > /usr/share/nginx/html/index.html"
+	```
 
 Remove container:
 ```bash
