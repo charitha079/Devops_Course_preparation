@@ -1,4 +1,4 @@
-Module 1: Docker Fundamentals
+### Module 1: Docker Fundamentals
 Goal	: Understand what Docker is, why containers matter, and basic commands.
 
 	Topics:
@@ -20,7 +20,7 @@ Goal	: Understand what Docker is, why containers matter, and basic commands.
 		- List and inspect containers/images
 		- Remove containers/images safely
 
-Module 2: Docker Images and Dockerfile
+### Module 2: Docker Images and Dockerfile
 Goal: Learn to create custom Docker images from scratch.
 
 	Topics:
@@ -35,7 +35,7 @@ Goal: Learn to create custom Docker images from scratch.
 		- Build, run, and tag images
 		- Push images to Docker Hub
 
-Module 3: Docker Volumes & Persistent Storage
+### Module 3: Docker Volumes & Persistent Storage
 Goal: Learn to persist data outside containers.
 
 	Topics:
@@ -48,7 +48,7 @@ Goal: Learn to persist data outside containers.
 		- Persist a MySQL/PostgreSQL database using volumes
 		- Bind a local folder to a container for development
 
-Module 4: Docker Networking
+### Module 4: Docker Networking
 Goal: Understand container communication and network types.
 
 	Topics:
@@ -61,7 +61,7 @@ Goal: Understand container communication and network types.
 		- Run multiple containers and enable communication
 		- Link containers using Docker network
 
-Module 5: Docker Compose
+### Module 5: Docker Compose
 Goal: Manage multi-container applications efficiently.
 
 	Topics:
@@ -76,7 +76,7 @@ Goal: Manage multi-container applications efficiently.
 		- Scale services
 		- Use .env files
 
-Module 6: Docker Registry & Images
+### Module 6: Docker Registry & Images
 Goal: Learn to share Docker images.
 
 	Topics:
@@ -89,7 +89,7 @@ Goal: Learn to share Docker images.
 		- Pull the image on another machine
 		- Explore AWS ECR
 
-Module 7: Advanced Docker
+### Module 7: Advanced Docker
 
 Goal: Dive into production-level Docker concepts.
 
@@ -104,7 +104,7 @@ Goal: Dive into production-level Docker concepts.
 		- Optimize Dockerfiles for production
 		- Configure restart policies and health checks
 
-Module 8: CI/CD & Docker
+### Module 8: CI/CD & Docker
 Goal: Automate build and deployment using Docker.
 
 	Topics:
@@ -116,7 +116,7 @@ Goal: Automate build and deployment using Docker.
 		- Create a GitHub Actions pipeline that builds and pushes Docker images
 		- Deploy a containerized app automatically
 
-Module 9: Docker in Cloud & Orchestration Basics
+### Module 9: Docker in Cloud & Orchestration Basics
 Goal	: Learn to deploy containers in cloud environments.
 
 	Topics:
@@ -130,7 +130,7 @@ Goal	: Learn to deploy containers in cloud environments.
 		- Explore Docker Swarm mode
 		- Optional: Deploy a simple app on Kubernetes
 
-Module 10: Projects & Portfolio
+### Module 10: Projects & Portfolio
 Project Ideas:
 
 	1:	Flask + MySQL + Docker Compose	
