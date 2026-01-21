@@ -22,9 +22,7 @@ To persist data beyond the container lifecycle, Docker provides **Volumes** and 
 
 ## 1. Create a Volume
 
-```bash
 docker volume create myvol
-```
 
 		### What happens?
 		- Docker creates a managed storage location on the host
@@ -40,27 +38,19 @@ docker volume create myvol
 
 ## 2. List Volumes
 
-```bash
 docker volume ls
-	```
 	
 	Example output:
-			```text
 			DRIVER    VOLUME NAME
+			======    ===========
 			local     myvol
 			local     db_data
-			```
 	
-	---
 
 ## 3. Inspect a Volume
-
-```bash
 docker volume inspect myvol
-```
 
 	Example output:
-		```json
 		[
 		{
 			"Name": "myvol",
@@ -69,33 +59,28 @@ docker volume inspect myvol
 			"Scope": "local"
 		}
 		]
-		```
 
 ### Key Fields
-- **Mountpoint** → Actual host directory
-- **Driver** → Volume driver (`local` by default)
+**Mountpoint** 	→ Actual host directory
+**Driver** 		→ Volume driver (`local` by default)
 
 ---
 
 ## 4. Use a Volume in a Container
-
-```bash
 docker run -v myvol:/path image
-```
 
-### Example: Persist Nginx Website Data
 
-```bash
-docker run -d \
-  --name web1 \
-  -v myvol:/usr/share/nginx/html \
-  nginx
-```
+   ### Example: Persist Nginx Website Data
+   
+	docker run -d \
+  		--name web1 \
+  		-v myvol:/usr/share/nginx/html \
+  		nginx
 
-Write data inside container:
-```bash
-docker exec web1 sh -c "echo Hello > /usr/share/nginx/html/index.html"
-```
+
+	Write data inside container:
+	docker exec web1 sh -c "echo Hello > /usr/share/nginx/html/index.html"
+
 
 Remove container:
 ```bash
