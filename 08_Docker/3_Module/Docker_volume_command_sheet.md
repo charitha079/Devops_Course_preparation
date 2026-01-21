@@ -10,9 +10,8 @@ To persist data beyond the container lifecycle, Docker provides **Volumes** and 
 
 ---
 
-## Volume Commands Overview
-
-	```bash
+	## Volume Commands Overview
+	
 	docker volume create vol
 	docker volume ls
 	docker volume inspect vol
@@ -20,9 +19,6 @@ To persist data beyond the container lifecycle, Docker provides **Volumes** and 
 	docker volume prune
 	docker run -v vol:/path image
 	docker run -v /host:/path image
-	```
-
----
 
 ## 1. Create a Volume
 
