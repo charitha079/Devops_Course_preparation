@@ -32,12 +32,14 @@ spec:
         - containerPort: 80
 ```
 
-Apply the deployment:
+Apply the deployment  :
 
 ```bash
-kubectl apply -f deployment.yaml
-kubectl get deployments
-kubectl get pods
+        kubectl apply -f deployment.yaml               -----> updates the resources in the YAML file, making the cluster match the desired state.
+
+        kubectl get deployments                        -----> lists all deployments in the current namespace, showing their name, number of replicas, ready replicas, and age.
+
+        kubectl get pods                               -----> lists all pods in the current namespace, showing their name, ready status, current status (Running, Pending, etc.), restarts, and age.
 ```
 
 This creates **3 pods** running the `nginx` container.
