@@ -48,7 +48,7 @@ This creates **3 pods** running the `nginx` container.
 
 ## 2. Edit a Deployment
 
-### A. Edit YAML and re-apply
+### 2.1. Edit YAML and re-apply
 
 Change replicas to 5 in `deployment.yaml`:
 
@@ -63,7 +63,7 @@ Apply changes:
 kubectl apply -f deployment.yaml
 ```
 
-### B. Edit live using kubectl
+### 2.2. Edit live using kubectl
 
 ```bash
 kubectl edit deployment myapp-deployment
