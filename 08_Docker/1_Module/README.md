@@ -9,13 +9,15 @@ Topics:
 	- Installing Docker (Linux / Windows / Mac)
 	
 	- Basic Docker CLI:
-		docker --version
-		docker run
-		docker ps, docker images
-		docker stop, docker rm 
+```bash
+			docker --version
+			docker run
+			docker ps, docker images
+			docker stop, docker rm
+```
 	- Container lifecycle
 
-Hands-on:
-	- Run your first container (hello-world, nginx)
-	- List and inspect containers/images
-	- Remove containers/images safely
+	Hands-on:
+		- Run your first container (hello-world, nginx)
+		- List and inspect containers/images
+		- Remove containers/images safely
