@@ -1,6 +1,7 @@
 ### deployment workflow
+========================
 
-Step 1: Write the deployment.yaml
+### Step 1: Write the deployment.yaml
 
 	- You define the desired state in deployment.yaml file
 	- Number of pods (replicas)
@@ -8,7 +9,7 @@ Step 1: Write the deployment.yaml
 	- Ports, labels, environment variables, volumes, etc.
 
 
-Step 2: Apply the deployment
+### Step 2: Apply the deployment
 
 	Command: kubectl apply -f deployment.yaml
 
@@ -19,7 +20,7 @@ Step 2: Apply the deployment
 		
 	Components involved: kubectl → API Server → etcd.
 
-Step 3: Deployment Controller takes over
+### Step 3: Deployment Controller takes over
 
 		- The Deployment Controller in Controller Manager watches the Deployment object in API Server.
 		- It compares desired replicas with current pods.
@@ -29,7 +30,7 @@ Step 3: Deployment Controller takes over
 
 	Components involved: Deployment Controller, API Server, ReplicaSet object.
 
-Step 4: ReplicaSet creates Pods
+### Step 4: ReplicaSet creates Pods
 
 		- The ReplicaSet Controller (also in Controller Manager) sees changes in the ReplicaSet object.
 		- It ensures correct number of pods exist:
@@ -39,7 +40,7 @@ Step 4: ReplicaSet creates Pods
 
 	Components involved: ReplicaSet Controller, API Server.
 
-Step 5: Scheduler assigns pods
+### Step 5: Scheduler assigns pods
 
 		- Newly created Pods are in Pending state.
 		- Scheduler picks an appropriate node based on:
@@ -49,13 +50,13 @@ Step 5: Scheduler assigns pods
 		
 	Components involved: Scheduler, Kubelet, container runtime (Docker/containerd).
 
-Step 6: Pod becomes Ready
+### Step 6: Pod becomes Ready
 	
 		Kubernetes monitors pods via readiness/liveness probes (if defined).
 		Once all containers in the pod are running and ready → pod is marked Ready.
 	Components involved: Kubelet, API Server (updates pod status), optionally health probes.
 
-Step 7: Expose the Deployment
+### Step 7: Expose the Deployment
 
 		- You can expose pods via a Service:
 		- kubectl expose deployment nginx-deployment --type=NodePort --port=80
@@ -63,7 +64,7 @@ Step 7: Expose the Deployment
 		
 	Components involved: API Server (stores Service object), kube-proxy, networking layer.
 
-Step 8: Kubernetes maintains desired state
+### Step 8: Kubernetes maintains desired state
 
 	Kubernetes constantly reconciles:
 		- If a pod dies → ReplicaSet recreates it automatically.
@@ -73,9 +74,8 @@ Step 8: Kubernetes maintains desired state
 		
 	Components involved: Deployment Controller, ReplicaSet Controller, API Server, Scheduler, Kubelet.
 
-
-
-Summary :
+====================================================================================================================================================================
+### Summary :
 
 	Deployment → ReplicaSet → Pods is the control hierarchy.
 	Controllers (Deployment, ReplicaSet) live in the Controller Manager on control plane nodes.
