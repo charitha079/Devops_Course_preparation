@@ -73,8 +73,7 @@
 		- This is the self-healing loop of Kubernetes.
 		
 	Components involved: Deployment Controller, ReplicaSet Controller, API Server, Scheduler, Kubelet.
-
-====================================================================================================================================================================
+---
 ### Summary :
 
 	Deployment → ReplicaSet → Pods is the control hierarchy.
