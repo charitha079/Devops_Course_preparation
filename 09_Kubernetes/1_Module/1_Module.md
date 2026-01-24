@@ -57,7 +57,7 @@ As companies began moving from monolithic applications to microservices, they st
 
 ---			
 	
- 	Challenges solved by kubernetes
+ ###  Challenges solved by kubernetes
 	
 		1) Automation :		
 			- Automatically deploy, restart, scale, and manage containers
