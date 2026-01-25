@@ -1,4 +1,4 @@
-#  Shell Scripting Roadmap (≈ 50 Hours)
+#  Shell Scripting Roadmap
 
 This roadmap gives you a structured, hands‑on plan to learn **Bash shell scripting** — essential for automation, system administration, and DevOps workflows. Each module includes goals, topics, practice tasks, and time estimates.
 
@@ -14,9 +14,9 @@ This roadmap gives you a structured, hands‑on plan to learn **Bash shell scrip
 - Script creation and execution permissions  
 - Using `echo`, `printf`, and basic input/output
 
-### Hands‑on
-- Write & run a “Hello World” script  
-- Accept user input via `read`
+      Hands‑on
+      - Write & run a “Hello World” script  
+      - Accept user input via `read`
 
 
 ---
@@ -31,9 +31,9 @@ This roadmap gives you a structured, hands‑on plan to learn **Bash shell scrip
 - User input & environment variables  
 - Positional parameters (`$1`, `$2`, etc.)
 
-### Hands‑on
-- Build a script that accepts and prints arguments  
-- Create environment export scripts
+      Hands‑on
+      - Build a script that accepts and prints arguments  
+      - Create environment export scripts
 
 
 ---
@@ -47,9 +47,9 @@ This roadmap gives you a structured, hands‑on plan to learn **Bash shell scrip
 - Test expressions (`[ ]`, `[[ ]]`)  
 - Exit status & boolean logic
 
-### Hands‑on
-- Create scripts that react to file existence or user input  
-- Build a simple menu script
+      Hands‑on
+      - Create scripts that react to file existence or user input  
+      - Build a simple menu script
 
 
 ---
@@ -62,9 +62,9 @@ This roadmap gives you a structured, hands‑on plan to learn **Bash shell scrip
 - `for`, `while`, `until` loops  
 - Loop control (`break`, `continue`)
 
-### Hands‑on
-- Batch rename files in a directory  
-- Create progress reports with loops
+      Hands‑on
+      - Batch rename files in a directory  
+      - Create progress reports with loops
 
 ---
 
@@ -77,9 +77,9 @@ This roadmap gives you a structured, hands‑on plan to learn **Bash shell scrip
 - Parameters & return values  
 - Script modularization
 
-### Hands‑on
-- Write scripts with multiple functions  
-- Create a script library you can source
+      Hands‑on
+      - Write scripts with multiple functions  
+      - Create a script library you can source
 
 ---
 
@@ -92,9 +92,9 @@ This roadmap gives you a structured, hands‑on plan to learn **Bash shell scrip
 - Text extraction & formatting with `awk`  
 - In‑place editing with `sed`
 
-### Hands‑on
-- Parse system logs to extract useful fields  
-- Create a log summary script
+      Hands‑on
+      - Parse system logs to extract useful fields  
+      - Create a log summary script
 
 
 ---
@@ -108,9 +108,9 @@ This roadmap gives you a structured, hands‑on plan to learn **Bash shell scrip
 - `set -e`, `set -x` for debugging  
 - Logging output & error messages
 
-### Hands‑on
-- Add debugging to existing scripts  
-- Build error recovery where needed
+      Hands‑on
+      - Add debugging to existing scripts  
+      - Build error recovery where needed
 
 ---
 
@@ -123,9 +123,9 @@ This roadmap gives you a structured, hands‑on plan to learn **Bash shell scrip
 - Running scripts on intervals  
 - Logging job outputs
 
-### Hands‑on
-- Schedule a cleanup script  
-- Automate daily system status reports
+      Hands‑on
+      - Schedule a cleanup script  
+      - Automate daily system status reports
 
 
 ---
@@ -139,9 +139,9 @@ This roadmap gives you a structured, hands‑on plan to learn **Bash shell scrip
 - Backup scripts  
 - Integrating scripts with CI/CD pipelines
 
-### Hands‑on
-- Script a backup routine with logging  
-- Create a script that triggers on a GitHub Actions runner
+      Hands‑on
+      - Script a backup routine with logging  
+      - Create a script that triggers on a GitHub Actions runner
 
 ---
 
