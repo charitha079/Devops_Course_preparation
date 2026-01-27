@@ -1,4 +1,5 @@
 ### Module 6: Docker Registry & Images
+---
 
 ### 1) Docker Registry
 
