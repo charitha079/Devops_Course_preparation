@@ -58,15 +58,16 @@ Docker hub ----> Public Registry
 			- v1.0-staging
 			- v1.0-prod	
 			Example : mrcloud111/frontend:v1.0-prod
-	Why tagging ?
-		- Deploy the same app to multiple environments
-		- Roll back easily
-		- Track versions clearly
-		- CI/CD friendly
+		Why tagging ?
+			- Deploy the same app to multiple environments
+			- Roll back easily
+			- Track versions clearly
+			- CI/CD friendly
 		
 	
 ---  
-  Hands-on:
-  	- Push your custom image to Docker Hub
-  	- Pull the image on another machine
-  	- Explore AWS ECR
+
+### Hands-on:
+  - Push your custom image to Docker Hub
+  - Pull the image on another machine
+  - Explore AWS ECR
