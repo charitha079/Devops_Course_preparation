@@ -1,16 +1,14 @@
 ### Module 6: Docker Registry & Images
 
-### Topics:
-
 ### 1) Docker Registry
 
    1) A Docker Registry is a centralized, versioned storage system for Docker images, used to push, pull, secure, distribute,   and manage container images across     environments like dev, QA, staging, and production.
    2) It acts as the single source of truth for container artifacts in a CI/CD pipeline.
 
 		Types of Docker Registries
-			1) Public Registry
+			> Public Registry
 			 	- Docker Hub (public repos)
-			2) Private Registry (Enterprise Use)	
+			> Private Registry (Enterprise Use)	
 				- AWS ECR
 				- Azure ACR
 				- Google Artifact Registry
@@ -24,40 +22,42 @@
 			- Same app, different builds
 			- Different environments
 					
-	
-### 2)Docker Hub: Pulling and pushing images
+---	
+
+### 2) Docker Hub: Pulling and pushing images
 
 Docker Hub is a cloud-hosted container registry service provided by Docker, used to store, manage, share, and distribute container images.
 
-### 3)Private registries
-
-A private registry is a container registry that restricts access so only authorized users, services, or systems can push or pull container images. Unlike public registries, images are not publicly accessible.
+Private registries
+	A private registry is a container registry that restricts access so only authorized users, services, or systems can push or pull container images. Unlike 	 		public registries, images are not publicly accessible.
 
 Example : Amazon Elastic Container Registry ,Google Artifact Registry , Azure Container Registry   ---> private Registries
 	
 Docker hub ----> Public Registry
-	
-### 4) Tagging images for different environments
-   Tagging is how you identify the same Docker image for different environments like dev, test, staging, prod.
-   A tag is just a label
-	1)Environment-based tags
-		- dev
-		- test
-		- staging
-		- prod		
-		Example: 	mrcloud111/frontend:dev
-					mrcloud111/backend:prod					
-	2)Version-based tags (recommended)
-		- v1.0
-		- v1.1
-		- v2.0
-		Example: mrcloud111/front_end:v1.0
+
+---
+
+### 3) Tagging images for different environments
+   - Tagging is how you identify the same Docker image for different environments like dev, test, staging, prod.
+   - A tag is just a label
+		1) Environment-based tags
+			- dev
+			- test
+			- staging
+			- prod		
+			Example: 	mrcloud111/frontend:dev
+						mrcloud111/backend:prod					
+		2) Version-based tags (recommended)
+			- v1.0
+			- v1.1
+			- v2.0
+			Example: mrcloud111/front_end:v1.0
 				 mrcloud111/back_end:v1.0				 
-	3)Combined tags (Environment with version )
-		- v1.0-dev
-		- v1.0-staging
-		- v1.0-prod	
-		Example : mrcloud111/frontend:v1.0-prod
+		3) Combined tags (Environment with version )
+			- v1.0-dev
+			- v1.0-staging
+			- v1.0-prod	
+			Example : mrcloud111/frontend:v1.0-prod
 	Why tagging ?
 		- Deploy the same app to multiple environments
 		- Roll back easily
@@ -65,8 +65,7 @@ Docker hub ----> Public Registry
 		- CI/CD friendly
 		
 	
-  
-  
+---  
   Hands-on:
   	- Push your custom image to Docker Hub
   	- Pull the image on another machine
